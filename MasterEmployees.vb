@@ -64,6 +64,7 @@ Public Class MasterEmployeesInfo
     Dim _Dept_name As String
     Dim _Grade_name As String
     Dim _Leave_Category_code As Integer
+    Dim _Leave_Category_Name As String
     Dim _Section_Name As String
     Dim _emp_confirmationextention As Date
     '----------------------------------------
@@ -628,6 +629,14 @@ Public Class MasterEmployeesInfo
             _Leave_Category_code = value
         End Set
     End Property
+    Public Property Leave_Category_Name() As String
+        Get
+            Return _Leave_Category_Name
+        End Get
+        Set(ByVal value As String)
+            Leave_Category_Name = value
+        End Set
+    End Property
     Public Property Grade_name() As String
         Get
             Return _Grade_name
@@ -918,6 +927,7 @@ Public Class MasterEmployeesDB
                 .Grade_code = rdr.Item("Grade_code")
                 .Grade_Name = rdr.item("Grade_Name")
                 .Leave_Category_code = rdr.Item("Emp_Leave_Category")
+                .Leave_Category_Name = rdr.Item("Leave_Category_Name")
                 .Emp_appointment_date = rdr.Item("Emp_appointment_date")
                 .Emp_Confirm_date = rdr.Item("emp_confirm_date")
                 .Emp_category = rdr.Item("Emp_category")
@@ -1146,6 +1156,7 @@ Public Class MasterEmployeesDB
                 .card_no = rdr.Item("card_no")
                 .Sharia_Flag = rdr.Item("Sharia_Flag")
                 .Profit_Willing_Flag = rdr.Item("Profit_Willing_Flag")
+                .Payroll_Category_code = rdr.Item("Emp_Payroll_category")
             End With
 
             Return Employee
